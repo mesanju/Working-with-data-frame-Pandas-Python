@@ -1,0 +1,231 @@
+#!/usr/bin/env python
+# coding: utf-8
+
+# In[16]:
+
+
+# importing file
+
+import pandas as pd
+
+
+# In[4]:
+
+
+"""Method 1: Specify full path
+
+#Windows:
+stats = pd.read_csv("C:\\Users\\Sanju\\Desktop\\Python\\Demographicdata.csv")
+
+Mac:
+stats = pd.read_csv("/Users/rabindhakal/Desktop/Sanju/Python/Demographicdata.csv")
+"""
+#stats = pd.read_csv("/Users/rabindhakal/Desktop/Sanju/Python/Demographic data.csv")
+
+
+# In[9]:
+
+
+#Method 2: By changing working directory
+
+import os
+print(os.getcwd())
+
+#Changing directory
+#Windows:
+#os.chdir("C:\\Users\\rabindhakal\\Desktop\\Sanju\\Python")
+
+#Mac:
+os.chdir('/Users/rabindhakal/Desktop/Sanju/Python')
+print(os.getcwd())
+
+
+# In[18]:
+
+
+demo_data = pd.read_csv("Demographic Data.csv")
+print(demo_data)
+demo_data.head(5)
+
+
+# In[19]:
+
+
+#Number of rows
+len(demo_data)
+
+
+# In[24]:
+
+
+# see column
+demo_data.columns
+
+# get number of columns
+#len(demo_data.columns)
+
+
+# In[25]:
+
+
+# get number of columns
+len(demo_data.columns)
+
+
+# In[26]:
+
+
+#get top rows
+
+demo_data.head(6)
+
+
+# In[27]:
+
+
+#get bottom rows
+demo_data.tail(6)
+
+
+# In[28]:
+
+
+#getting information on columns
+demo_data.info()
+
+
+# In[29]:
+
+
+#getting statistical values of columns
+demo_data.describe()
+
+
+# In[30]:
+
+
+#getting holizontal display of demo_data.describe()
+demo_data.describe().transpose()
+
+
+# In[32]:
+
+
+#accessing columns
+demo_data.columns
+
+
+# In[34]:
+
+
+# renaming columns of Data frame
+demo_data.columns = ["CountryName","CountryCode","BirthRate","InternetUsers","IncomeGroup"]
+print(demo_data.columns)
+
+
+# ##Subseting data frame in Pandas##
+
+# In[35]:
+
+
+demo_data.head(5)
+
+
+# In[ ]:
+
+
+""""
+Three parts in subseting data frame
+
+1) Subseting by rows
+2) Subseting by columns
+3) Combine both
+
+""""
+
+
+# In[36]:
+
+
+# 1) Subsetting by rows
+demo_data[21:26]
+
+# demo_data[:]
+# demo_data[185:]
+# demo_data[:10]
+
+
+# In[38]:
+
+
+#reverse whole data set
+#demo_data[::-1]
+
+
+# In[ ]:
+
+
+#demo_data[::20] # gives every 2oth row
+
+
+# In[39]:
+
+
+#2) Subsetting by columns:
+
+demo_data.head(5)
+
+
+# In[47]:
+
+
+#demo_data["CountryName"] # 
+demo_data["CountryName"].head(5)
+
+
+# In[50]:
+
+
+#PAssing list of columns
+demo_data[["CountryName","BirthRate"]].head(5)
+
+
+# In[ ]:
+
+
+# Quick access
+demo_data.head()
+demo_data.BirthRate() # no space between BirthRate
+demo_data.BirthRate.head()
+
+
+# In[52]:
+
+
+# 3) Combining subseting of row and columns
+demo_data[4:8][["CountryName","BirthRate"]]
+
+
+# In[53]:
+
+
+demo_data[["CountryName","BirthRate"]][4:8]
+
+
+# In[ ]:
+
+
+
+
+
+# In[ ]:
+
+
+
+
+
+# In[ ]:
+
+
+
+
